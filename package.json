@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-starter",
+  "version": "1.0.0",
+  "description": "Node.js Starter Kit",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --config ./config/eslint.config.js --debug src/",
+    "lint:fix": "eslint --config ./config/eslint.config.js --debug src/ --fix",
+    "prettier": "prettier --config ./config/prettier.config.js --write src/**/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://armdong.github.com/nodejs-starter"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Wang Maodong",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.11.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "1.15.3"
+  }
+}
